@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+# 隐私：录音、文字、配置、术语表绝不入库
+*.ogg
+*.wav
+*.opusraw.local
+/captures/
+# 测试样本保留
+!tests/sine440.opusraw

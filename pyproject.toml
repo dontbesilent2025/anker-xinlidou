@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "anker-xinlidou"
+version = "0.1.0"
+description = "用安克录音豆实现全天候记录 + Agent 通过 MCP 拉取（非官方）"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["soundcore", "anker", "d3200", "mcp", "recorder", "transcription"]
+dependencies = [
+    "bleak>=0.22",
+    "cryptography>=42",
+    "mcp>=2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+anker-xinlidou = "anker_xinlidou.cli:main"
+anker-xinlidou-mcp = "anker_xinlidou.mcp_server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/anker_xinlidou"]
